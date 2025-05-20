@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let form = document.querySelector("#create-task-form")
   let taskList = document.querySelector("#tasks")
 
-  form.addEventListener("submit", () => {
+  form.addEventListener("submit", (event) => {
     const userInput = event.target.elements["new-task-description"].value
-    buildToDo(userInput)
+    buildToDo(userInput,event)
     
   })
 
-  function buildToDo(userInput) {
+  function buildToDo(userInput,event) {
     event.preventDefault()
     let list = document.createElement("li")
     list.textContent = userInput
